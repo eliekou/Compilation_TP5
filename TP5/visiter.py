@@ -31,7 +31,8 @@ class PrettyPrinter(Visitor):
         print(f"{operation.gauche} {operation.op} {operation.droite}")
 
     def visit_assignment(self, assignment):
-        print
+        visit_operation(assignment.droiteop)
+        print(f"{assignment.gauche} {assignment.droiteop}")
 
 
 
@@ -63,8 +64,8 @@ class SemanticAnalyser:
                 raise "ERROR at #{obs} : wrong identifier and duplicate identifier output '#{obs}'"
             if obs in DICT_ASSIGNMENT:
                 raise "ERROR at #{obs} : wrong identifier and duplicate identifier assignment '#{obs}'"
-            else:
-                self.DICT_{args}.append(obs)
+            """else:
+                self.DICT_{args}.append(obs)"""
 
 
         for obs in prog.Loutput:
@@ -75,8 +76,8 @@ class SemanticAnalyser:
                 raise "ERROR at #{obs} : duplicate identifier output '#{obs}'"
             if obs in DICT_ASSIGNMENT:
                 raise "ERROR at #{obs} : wrong identifier and duplicate identifier assignment '#{obs}'"
-            else:
-                self.DICT_{args}.append(obs)
+            """else:
+                self.DICT_{args}.append(obs)"""
 
 
         
@@ -88,5 +89,5 @@ class SemanticAnalyser:
                 raise "ERROR at #{obs} : wrong identifier and duplicate identifier output '#{obs}'"
             if obs in DICT_ASSIGNMENT:
                 raise "ERROR at #{obs} : duplicate identifier assignment '#{obs}'"
-            else:
-                self.DICT_{args}.append(obs) 
+            """else:
+                self.DICT_{args}.append(obs)""" 

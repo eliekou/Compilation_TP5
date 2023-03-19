@@ -80,6 +80,6 @@ print(Circuit1)
 
 print("============TEST PRETTY PRINTER=========\n")
 from visiter import *
-Visitor().pp(Circuit1)
-
-SemanticAnalyser()
+#Visitor().pp(Circuit1)
+PrettyPrinter().visit_input(Input1)
+#SemanticAnalyser()
